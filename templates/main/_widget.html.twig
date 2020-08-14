@@ -1,0 +1,14 @@
+<!-- Code du widget -->
+<div id="widget">
+    <!-- Définir une variable avec Twig + app.session = $session -->
+    {% set widgetData = app.session.get('widget') %}
+
+    {% if widgetData is not null %}
+        <p><strong>{{ widgetData.city }}</strong></p>
+        <p>{{ widgetData.date }}</p>
+        <p><img src="{{ asset('images/' ~ widgetData.weather ~ '.png') }}"></p>
+        <p>{{ widgetData.min }}°C / {{ widgetData.max }}°C</p>
+    {% else %}
+    <div>Sélectionnez une ville<br>dans la liste de gauche</div>    
+    {% endif %}
+</div>

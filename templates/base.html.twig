@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        <!-- Balises pour le responsive -->
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+        <!-- Notre CSS custom -->
+        <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    </head>
+    <body class="mb-5">
+        <nav class="container py-3 mb-3">
+            <ul class="nav nav-pills">
+                <li class="nav-item">
+                    <a class="nav-link {% block menu_home %}{% endblock %}" href="{{ path('home') }}">Accueil</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {% block menu_mountain %}{% endblock %}" href="{{ path('mountain') }}">Montagne</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {% block menu_beaches %}{% endblock %}" href="{{ path('beaches') }}">Plages</a>
+                </li>
+            </ul>
+        </nav>
+        <!-- Minimal responsive + columns -->
+        <main class="container">
+            <div class="row">
+                <!-- Content (les pages) -->
+                <div class="col-9">
+                    {% block body %}{% endblock %}
+                </div>
+                <!-- Sidebar (le widget) -->
+                <div class="col-3">
+                    {{ include('main/_widget.html.twig') }}
+                </div>
+            </div>
+        </main>
+        {% block javascripts %}{% endblock %}
+    </body>
+</html>

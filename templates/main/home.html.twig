@@ -1,0 +1,16 @@
+{% extends "base.html.twig" %}
+
+{% block menu_home %}active{% endblock %}
+
+{% block body %}
+
+<h1 class="mb-5">Bienvenue sur la météo des villes !</h1>
+
+{% for index, item in data %}
+<div class="item item--bg-{{ item.weather }}">
+    <div class="item--city"><a href="{{ path('city_select', { id: index }) }}">{{ item.city }}</a></div>
+    <div class="item--forecast">{{ item.date|slice(0, 5) }} : {{ item.min }}°C / {{ item.max }}°C</div>
+</div>
+{% endfor %}
+
+{% endblock %}

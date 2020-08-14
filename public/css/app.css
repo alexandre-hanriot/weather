@@ -1,0 +1,57 @@
+html {
+    overflow-y: scroll;
+}
+
+nav {
+    border-bottom: 2px solid lightgray;
+}
+
+#widget {
+    border: 2px solid lightgray;
+    padding: 1em;
+    text-align: center;
+}
+
+#widget img {
+    max-width: 100%;
+}
+
+.item {
+    padding-left: 55px;
+    background-image: url('../images/clouds.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-bottom: 0.5em;
+}
+
+.item--city {
+    font-weight: bold;
+}
+
+.item--bg-clouds {
+    background-image: url('../images/clouds.png');
+}
+
+.item--bg-rain {
+    background-image: url('../images/rain.png');
+}
+
+.item--bg-shower {
+    background-image: url('../images/shower.png');
+}
+
+.item--bg-snow {
+    background-image: url('../images/snow.png');
+}
+
+.item--bg-storm {
+    background-image: url('../images/storm.png');
+}
+
+.item--bg-sun-cloud {
+    background-image: url('../images/sun-cloud.png');
+}
+
+.item--bg-sun {
+    background-image: url('../images/sun.png');
+}
